@@ -1,13 +1,28 @@
-import withLayout from "@/components/layout";
+import Navbar from "@/components/layout/navbar";
+import Image from "next/image";
 
 function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {/* <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex"> */}
-      <p>test</p>
-    </main>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main className="relative flex justify-center">
+        <div>
+          <Image
+            src="/images/homeImage.png"
+            alt="art_home_page"
+            width={550}
+            height={550}
+            className="w-full relative object-contain"
+          />
+        </div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full p-4 sm:text-lg md:text-xl lg:text-2xl">
+          <h1 className="text-[100px]">Mehr Ekhlaspour</h1>
+        </div>
+      </main>
+    </>
   );
 }
 
-export default withLayout(Home)
-
+export default Home;
