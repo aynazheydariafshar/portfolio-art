@@ -7,17 +7,17 @@ const Navbar = () => {
     <nav className="w-100 flex justify-between items-center mx-11 mt-7">
       <div className="flex-col justify-center items-center space-y-2">
         <Image
-          sizes="(max-width: 300px) 300px, (max-width: 768px) 768px, 1280px"
           src="/images/logo.png"
           alt="logo"
-          width={70}
-          height={70}
+          width={50}
+          height={50}
+          className="w-full relative object-contain xs:h-[10px] xs:w-[10px]"
         />
         <h4 className="text-center text-xl">
           MEHR
         </h4>
       </div>
-      <FiMenu className="text-3xl" />
+      <FiMenu className="text-3xl lg:text-4xl md-text-4xl hover:cursor-pointer hover:text-[#D4450E]" />
     </nav>
   );
 };

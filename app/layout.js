@@ -14,7 +14,7 @@ const poppins = localFont({
   src: [
     {
       path: '../public/fonts/Garet-Book.ttf',
-      weight: '650'
+      weight: '500'
     },
     {
       path: '../public/fonts/Garet-Heavy.ttf',
