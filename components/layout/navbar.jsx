@@ -13,7 +13,7 @@ const Navbar = () => {
           width={70}
           height={70}
         />
-        <h4 className="font-bold text-center text-xl">
+        <h4 className="text-center text-xl">
           MEHR
         </h4>
       </div>
