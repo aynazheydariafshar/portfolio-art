@@ -16,7 +16,7 @@ module.exports = {
       //   sans: ['var(--font-poppins)']
       // }
       boxShadow: {
-        'white': '0 0 10px rgba(255, 255, 255, 0.9)',
+        'white': '0 0 4px rgba(255, 255, 255, 0.9)',
       }
     },
   },

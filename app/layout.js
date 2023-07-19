@@ -27,7 +27,7 @@ const poppins = localFont({
 export default function RootLayout({children}) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body suppressHydrationWarning={true} className={poppins.className}>
         {children}
       </body>
     </html>
