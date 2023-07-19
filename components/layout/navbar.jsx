@@ -2,7 +2,8 @@ import Image from "next/image";
 import { FiMenu } from "react-icons/fi";
 import { TfiClose } from "react-icons/tfi";
 
-const Navbar = ({ menuShow, setMenuShow }) => {
+const Navbar = ({ menuShow, handleToggle }) => {
+  
   return (
     <nav className="w-100 flex justify-between items-center mx-11 mt-7">
       <div className="flex-col justify-center items-center space-y-2">
@@ -17,8 +18,8 @@ const Navbar = ({ menuShow, setMenuShow }) => {
           MEHR
         </h4>
       </div>
-      {menuShow ? <TfiClose onClick={() => setMenuShow(false)} className="text-3xl lg:text-4xl md-text-4xl hover:cursor-pointer hover:text-[#D4450E]" />
-        : <FiMenu onClick={() => setMenuShow(true)} className="text-3xl lg:text-4xl md-text-4xl hover:cursor-pointer hover:text-[#D4450E]" />
+      {menuShow ?  <TfiClose onClick={handleToggle} className="text-3xl lg:text-4xl md-text-4xl hover:cursor-pointer hover:text-[#D4450E]" />
+        : <FiMenu onClick={handleToggle} className="text-3xl lg:text-4xl md-text-4xl hover:cursor-pointer hover:text-[#D4450E]" />
       }
     </nav>
   );
