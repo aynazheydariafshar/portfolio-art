@@ -1,27 +1,50 @@
+'use client'
 import Image from "next/image";
+import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { TfiClose } from "react-icons/tfi";
+import Menu from "@/components/menu";
 
-const Navbar = ({ menuShow, handleToggle }) => {
-  
+const Navbar = ({ children }) => {
+  const [menuShow, setMenuShow] = useState(false);
+  const handleToggle = () => {
+    setMenuShow((prev) => !prev);
+  };
   return (
-    <nav className="w-100 flex justify-between items-center mx-11 mt-7">
-      <div className="flex-col justify-center items-center space-y-2">
-        <Image
-          src="/images/logo.png"
-          alt="logo"
-          width={50}
-          height={50}
-          className="w-full relative object-contain xs:h-[10px] xs:w-[10px]"
-        />
-        <h4 className="text-center text-xl">
-          MEHR
-        </h4>
-      </div>
-      {menuShow ?  <TfiClose onClick={handleToggle} className="text-3xl lg:text-4xl md-text-4xl hover:cursor-pointer hover:text-[#D4450E]" />
-        : <FiMenu onClick={handleToggle} className="text-3xl lg:text-4xl md-text-4xl hover:cursor-pointer hover:text-[#D4450E]" />
-      }
-    </nav>
+    <>
+      <header>
+        <nav className="w-100 flex justify-between items-center mx-11 mt-7">
+          <div className="flex-col justify-center items-center space-y-2">
+            <Image
+              src="/images/logo.png"
+              alt="logo"
+              width={50}
+              height={50}
+              className="w-full relative object-contain"
+            />
+            <h4 className="text-center text-xl">MEHR</h4>
+          </div>
+          {menuShow ? (
+            <TfiClose
+              onClick={handleToggle}
+              className="text-3xl lg:text-4xl md-text-4xl hover:cursor-pointer hover:text-[#D4450E]"
+            />
+          ) : (
+            <FiMenu
+              onClick={handleToggle}
+              className="text-3xl lg:text-4xl md-text-4xl hover:cursor-pointer hover:text-[#D4450E]"
+            />
+          )}
+        </nav>
+      </header>
+      {menuShow ? (
+        <main className="mt-5 flex justify-center items-center h-[70vh]">
+          <Menu handleToggle={handleToggle}/>
+        </main>
+      ) : (
+        children
+      )}
+    </>
   );
 };
 
