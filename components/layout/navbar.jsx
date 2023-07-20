@@ -38,13 +38,11 @@ const Navbar = ({ children }) => {
         </nav>
       </header>
       {menuShow ? (
-        <main
-          className="mt-5 flex justify-center items-center h-[70vh] menu-animation"
-        >
+        <section className="mt-5 flex justify-center items-center h-[70vh] menu-animation">
           <Menu handleToggle={handleToggle} />
-        </main>
+        </section>
       ) : (
-        children
+        <main className="animate-fade">{children}</main>
       )}
     </>
   );

@@ -7,14 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // backgroundImage: {
-      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      //   'gradient-conic':
-      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      // },
-      // fontFamily: {
-      //   sans: ['var(--font-poppins)']
-      // }
+      animation: {
+        fade: 'fadeOut 2s ease-in-out',
+      },
+
+      // that is actual animation
+      keyframes: theme => ({
+        fadeOut: {
+          '0%': { opacity : 0 },
+          '100%': { opacity: 100 },
+        },
+      }),
       boxShadow: {
         'white': '0 0 4px rgba(255, 255, 255, 0.9)',
       }
