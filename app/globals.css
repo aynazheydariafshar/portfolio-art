@@ -10,13 +10,26 @@ body {
 
 @keyframes slidein {
   from {
-    transform: translateX(-2%);
+    transform: translateX(-1%);
   }
   to {
-    transform: translateX(2%);
+    transform: translateX(1%);
   }
 }
 
 .animate-slidein {
-  animation: slidein 1s linear infinite alternate;
+  animation: slidein .8s linear infinite alternate;
+}
+
+@keyframes slideMenu {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.menu-animation {
+  animation: slideMenu .6s linear;
 }

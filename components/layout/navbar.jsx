@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
@@ -15,12 +15,12 @@ const Navbar = ({ children }) => {
       <header>
         <nav className="w-100 flex justify-between items-center mx-11 mt-7">
           <div className="flex-col justify-center items-center space-y-2">
-            <Image
+            <img
               src="/images/logo.png"
               alt="logo"
               width={50}
               height={50}
-              className="w-full relative object-contain"
+              className="relative"
             />
             <h4 className="text-center text-xl">MEHR</h4>
           </div>
@@ -38,8 +38,10 @@ const Navbar = ({ children }) => {
         </nav>
       </header>
       {menuShow ? (
-        <main className="mt-5 flex justify-center items-center h-[70vh]">
-          <Menu handleToggle={handleToggle}/>
+        <main
+          className="mt-5 flex justify-center items-center h-[70vh] menu-animation"
+        >
+          <Menu handleToggle={handleToggle} />
         </main>
       ) : (
         children
