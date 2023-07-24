@@ -16,7 +16,10 @@ export default function Menu({ handleToggle }) {
       </button>
       <button
         type="button"
-        onClick={() => router.push("/")}
+        onClick={() => {
+          router.push("/myArtWorks");
+          handleToggle();
+        }}
         className="focus:outline-none text-5xl md:text-6xl lg:text-7xl  font-bold hover:underline hover:text-[#FED013]"
       >
         Artworks

@@ -5,15 +5,15 @@ import { FiMenu } from "react-icons/fi";
 import { TfiClose } from "react-icons/tfi";
 import Menu from "@/components/menu";
 
-const Navbar = ({ children }) => {
+const Navbar = ({ bgColor, textColor, children }) => {
   const [menuShow, setMenuShow] = useState(false);
   const handleToggle = () => {
     setMenuShow((prev) => !prev);
   };
   return (
-    <>
+    <div className={`${bgColor} ${textColor}`}>
       <header>
-        <nav className="w-100 flex justify-between items-center mx-11 mt-7">
+        <nav className="w-100 flex justify-between items-center mx-11 pt-7">
           <div className="flex-col justify-center items-center space-y-2">
             <img
               src="/images/logo.png"
@@ -38,13 +38,13 @@ const Navbar = ({ children }) => {
         </nav>
       </header>
       {menuShow ? (
-        <section className="mt-5 flex justify-center items-center h-[70vh] menu-animation">
+        <section className="mt-5 flex justify-center items-center h-[80vh] menu-animation">
           <Menu handleToggle={handleToggle} />
         </section>
       ) : (
         <main className="animate-fade">{children}</main>
       )}
-    </>
+    </div>
   );
 };
 

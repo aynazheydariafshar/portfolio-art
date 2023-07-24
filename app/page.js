@@ -2,10 +2,12 @@
 import Footer from "@/components/layout/footer";
 import Navbar from "@/components/layout/navbar";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 function Home() {
+  const router = useRouter();
   return (
-    <Navbar>
+    <Navbar bgColor="bg-[#141512]" textColor="text-white">
       <section className="relative flex justify-center items-center animate-fade">
         <div>
           <Image
@@ -21,7 +23,10 @@ function Home() {
             </h1>
           </div>
           <div className="absolute top-[85%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full mt-5">
-            <button className="text-sm sm:text-base md:text-xl lg:text-xl text-black bg-white p-2 rounded-sm hover:underline hover:shadow-white">
+            <button
+              onClick={() => router.push("/myArtWorks")}
+              className="text-sm sm:text-base md:text-xl lg:text-xl text-black bg-white p-2 rounded-sm hover:underline hover:shadow-white"
+            >
               MY Artworks
             </button>
           </div>

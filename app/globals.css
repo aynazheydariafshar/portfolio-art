@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 
-body {
+/* body {
   color: white;
   background: rgb(20, 21, 18);
-}
+} */
 
 @keyframes slidein {
   from {
